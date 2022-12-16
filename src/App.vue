@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col min-h-screen font-Roboto bg-weather-primary">
+  <div class="flex flex-col min-h-screen font-Roboto bg-primary">
     <Navbar />
     <RouterView class="flex-1" v-slot="{ Component }">
       <Transition name="page" mode="out-in">

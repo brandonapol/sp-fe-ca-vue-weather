@@ -31,7 +31,7 @@ const router = createRouter({
         // see Navbar for where this gets used
         {
             path: "/weather/:state/:city",
-            name: "City",
+            name: "city",
             component: CityPage,
             meta: {
                 title: "Weather",

@@ -97,8 +97,8 @@ const addCity = () => {
         state: route.params.state,
         city: route.params.city,
         coords: {
-            latitude: route.query.latitide,
-            longitude: route.query.longitude,
+            lat: route.query.lat,
+            lon: route.query.lon,
         }
     }
 

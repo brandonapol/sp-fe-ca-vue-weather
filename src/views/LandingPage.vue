@@ -1,11 +1,12 @@
 <template>
   <div class="flex flex-col min-h-screen font-Roboto bg-primary">
-    <Navbar />
+    booty
+    <a href="localhost:5174/dashboard">dashboard</a>
   </div>
 </template>
 
-<script>
-  import Navbar from '../components/Navbar.vue'
+<script setup>
+
 </script>
 
 <style scoped>

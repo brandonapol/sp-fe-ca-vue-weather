@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  // ! Add just in time mode
+  mode: 'jit',
   content: [
     "./index.html",
     "./src/**/*.{vue,js,ts,jsx,tsx}",
@@ -10,7 +12,7 @@ module.exports = {
       colors: {
         "primary": "#f59e42",
         "secondary": "#e3a96b"
-      },
+      }, 
     },
     fontFamily: {
       Roboto: ["Roboto, sans-serif"],
