@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@frontegg/vue": "^2.0.12",
     "axios": "^1.2.1",
     "Math": "^0.0.1-security",
     "sass": "^1.56.2",

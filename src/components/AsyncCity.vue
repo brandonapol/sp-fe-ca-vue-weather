@@ -14,7 +14,7 @@
       <div class="flex flex-col items-center text-white py-12">
         <h1 class="text-4xl mb-2">{{ route.params.city }}</h1>
         <p class="text-sm mb-12">
-          {{
+          <!-- {{
             new Date(weatherData.currentTime).toLocaleDateString(
               "en-us",
               {
@@ -23,15 +23,16 @@
                 month: "long",
               }
             )
-          }}
-          {{
+          }} -->
+          hello
+          <!-- {{
             new Date(weatherData.currentTime).toLocaleTimeString(
               "en-us",
               {
                 timeStyle: "short",
               }
             )
-          }}
+          }} -->
         </p>
         <p class="text-8xl mb-8">
           {{ Math.round(weatherData.current.temp) }}&deg;
@@ -141,7 +142,7 @@ const route = useRoute();
 const getWeatherData = async () => {
     try {
         const weatherData = await axios.get(
-            `https://api.openweathermap.org/data/2.5/onecall?lat=${route.query.lat}&lon=${route.query.lng}&exclude={part}&appid=cb0e2c5ea4c83b9c517301b8e88f8121&units=imperial`
+            `https://api.openweathermap.org/data/2.5/onecall?lat=${route.query.lat}&lon=${route.query.lon}&exclude={part}&appid=cb0e2c5ea4c83b9c517301b8e88f8121&units=imperial`
         );
 
         // calculate current date and time
@@ -161,6 +162,7 @@ const getWeatherData = async () => {
     } catch (err) {
         console.log(err);
     }
+}
     
 const weatherData = await getWeatherData();
 
@@ -171,9 +173,9 @@ const removeCity = () => {
     const updatedCities = cities.filter((city) => city.id !== route.query.id);
     console.log(updatedCities);
     localStorage.setItem("myCities", JSON.stringify(updatedCities));
-    router.push({name: "home"});
+    router.push({name: "dashboard"});
 }
-}
+
 </script>
 
 <style scoped>

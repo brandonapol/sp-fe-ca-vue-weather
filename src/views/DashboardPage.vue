@@ -3,6 +3,8 @@
     <div class="pt-4 mb-8 relative">
         <input 
             type="text" 
+            v-model="searchQuery"
+            @input="getSearchResults"
             placeholder="Search for a city or state" 
             class="py-2 px-1 text-black w-full bg-white border-b
         focus:border-secondary focus:outline-none
@@ -22,7 +24,6 @@
             No results match your query, try a different term.
             </p>
             <template v-else>
-            </template>
             <li
                 v-for="searchResult in mapboxSearchResults"
                 :key="searchResult.id"
@@ -31,13 +32,14 @@
                 >
                 {{ searchResult.place_name }}
             </li>
-        </ul>
+            </template> 
+          </ul>
         </div>
         <div class="flex flex-col gap-4">
         <Suspense>
             <CityList />
             <template #fallback>
-            <CardSkeleton />
+                <CardSkeleton />
             </template>
         </Suspense>
         </div>
@@ -85,7 +87,7 @@
                     // url/v5/endpoint/${search terms}/{authentication and extra params}
                     // https://docs.mapbox.com/api/search/geocoding/#data-types 
                     const result = await axios.get(
-                        `https://api.mapbox.com/geocoding/v5/mapbox.places/${searchQuery.value}/.json?access_token=${mapboxAPIkey}&types=place`
+                        `https://api.mapbox.com/geocoding/v5/mapbox.places/${searchQuery.value}/.json?access_token=${mapboxKey}&types=place`
                     );
                     console.log(result)
                     mapboxSearchResults.value = result.data.features;

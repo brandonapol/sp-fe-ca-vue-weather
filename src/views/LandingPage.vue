@@ -1,14 +1,16 @@
 <template>
-  <div class="flex flex-col min-h-screen font-Roboto bg-primary">
-    booty
-    <a href="localhost:5174/dashboard">dashboard</a>
+  <div class="flex flex-row justify-center">
+    <div class="flex flex-col justify-center">
+      <button class="bg-white p-3 rounded border-b-2 shadow-lg" @click="goToDash">Go to Dashboard</button>
+    </div>
   </div>
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router';
+const router = useRouter()
 
+  const goToDash = () => {
+    router.push({ name: "dashboard"})
+  }
 </script>
-
-<style scoped>
-
-</style>
